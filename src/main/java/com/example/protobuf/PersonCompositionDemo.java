@@ -1,6 +1,7 @@
 package com.example.protobuf;
 
 import com.example.models.Address;
+import com.example.models.BodyStyle;
 import com.example.models.Car;
 import com.example.models.Person;
 
@@ -19,10 +20,12 @@ public class PersonCompositionDemo {
         Car car = Car.newBuilder()
                 .setCompany("Tata")
                 .setModel("Tigor xz")
+                .setBodyStyle(BodyStyle.SEDAN)
                 .build();
         Car car1 = Car.newBuilder()
                 .setCompany("HondaCity")
                 .setModel("civic")
+                .setBodyStyleValue(1)
                 .build();
 
         List<Car> cars = new ArrayList<>();

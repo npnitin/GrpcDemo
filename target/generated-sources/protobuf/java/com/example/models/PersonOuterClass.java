@@ -49,13 +49,15 @@ public final class PersonOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\014person.proto\"8\n\007Address\022\017\n\007pinCode\030\001 \001" +
-      "(\005\022\016\n\006street\030\002 \001(\t\022\014\n\004city\030\003 \001(\t\"%\n\003Car\022" +
-      "\017\n\007company\030\001 \001(\t\022\r\n\005model\030\002 \001(\t\"_\n\006Deale" +
-      "r\022!\n\005model\030\001 \003(\0132\022.Dealer.ModelEntry\0322\n\n" +
-      "ModelEntry\022\013\n\003key\030\001 \001(\005\022\023\n\005value\030\002 \001(\0132\004" +
-      ".Car:\0028\001\"Q\n\006Person\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030" +
-      "\002 \001(\005\022\031\n\007address\030\003 \001(\0132\010.Address\022\021\n\003car\030" +
-      "\004 \003(\0132\004.CarB\026\n\022com.example.modelsP\001b\006pro" +
+      "(\005\022\016\n\006street\030\002 \001(\t\022\014\n\004city\030\003 \001(\t\"E\n\003Car\022" +
+      "\017\n\007company\030\001 \001(\t\022\r\n\005model\030\002 \001(\t\022\036\n\nbody_" +
+      "style\030\003 \001(\0162\n.BodyStyle\"_\n\006Dealer\022!\n\005mod" +
+      "el\030\001 \003(\0132\022.Dealer.ModelEntry\0322\n\nModelEnt" +
+      "ry\022\013\n\003key\030\001 \001(\005\022\023\n\005value\030\002 \001(\0132\004.Car:\0028\001" +
+      "\"Q\n\006Person\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\031\n" +
+      "\007address\030\003 \001(\0132\010.Address\022\021\n\003car\030\004 \003(\0132\004." +
+      "Car*.\n\tBodyStyle\022\t\n\005SEDAN\020\000\022\007\n\003SUV\020\001\022\r\n\t" +
+      "HatchBack\020\002B\026\n\022com.example.modelsP\001b\006pro" +
       "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -73,7 +75,7 @@ public final class PersonOuterClass {
     internal_static_Car_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Car_descriptor,
-        new java.lang.String[] { "Company", "Model", });
+        new java.lang.String[] { "Company", "Model", "BodyStyle", });
     internal_static_Dealer_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Dealer_fieldAccessorTable = new

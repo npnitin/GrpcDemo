@@ -30,4 +30,15 @@ public interface CarOrBuilder extends
    */
   com.google.protobuf.ByteString
       getModelBytes();
+
+  /**
+   * <code>.BodyStyle body_style = 3;</code>
+   * @return The enum numeric value on the wire for bodyStyle.
+   */
+  int getBodyStyleValue();
+  /**
+   * <code>.BodyStyle body_style = 3;</code>
+   * @return The bodyStyle.
+   */
+  com.example.models.BodyStyle getBodyStyle();
 }

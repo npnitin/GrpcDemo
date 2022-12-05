@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private Car() {
     company_ = "";
     model_ = "";
+    bodyStyle_ = 0;
   }
 
   @java.lang.Override
@@ -60,6 +61,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             model_ = s;
+            break;
+          }
+          case 24: {
+            int rawValue = input.readEnum();
+
+            bodyStyle_ = rawValue;
             break;
           }
           default: {
@@ -172,6 +179,25 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BODY_STYLE_FIELD_NUMBER = 3;
+  private int bodyStyle_;
+  /**
+   * <code>.BodyStyle body_style = 3;</code>
+   * @return The enum numeric value on the wire for bodyStyle.
+   */
+  @java.lang.Override public int getBodyStyleValue() {
+    return bodyStyle_;
+  }
+  /**
+   * <code>.BodyStyle body_style = 3;</code>
+   * @return The bodyStyle.
+   */
+  @java.lang.Override public com.example.models.BodyStyle getBodyStyle() {
+    @SuppressWarnings("deprecation")
+    com.example.models.BodyStyle result = com.example.models.BodyStyle.valueOf(bodyStyle_);
+    return result == null ? com.example.models.BodyStyle.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -192,6 +218,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, model_);
     }
+    if (bodyStyle_ != com.example.models.BodyStyle.SEDAN.getNumber()) {
+      output.writeEnum(3, bodyStyle_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -206,6 +235,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, model_);
+    }
+    if (bodyStyle_ != com.example.models.BodyStyle.SEDAN.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(3, bodyStyle_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,6 +259,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCompany())) return false;
     if (!getModel()
         .equals(other.getModel())) return false;
+    if (bodyStyle_ != other.bodyStyle_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -241,6 +275,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCompany().hashCode();
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + BODY_STYLE_FIELD_NUMBER;
+    hash = (53 * hash) + bodyStyle_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -378,6 +414,8 @@ private static final long serialVersionUID = 0L;
 
       model_ = "";
 
+      bodyStyle_ = 0;
+
       return this;
     }
 
@@ -406,6 +444,7 @@ private static final long serialVersionUID = 0L;
       com.example.models.Car result = new com.example.models.Car(this);
       result.company_ = company_;
       result.model_ = model_;
+      result.bodyStyle_ = bodyStyle_;
       onBuilt();
       return result;
     }
@@ -461,6 +500,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
         onChanged();
+      }
+      if (other.bodyStyle_ != 0) {
+        setBodyStyleValue(other.getBodyStyleValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -639,6 +681,60 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int bodyStyle_ = 0;
+    /**
+     * <code>.BodyStyle body_style = 3;</code>
+     * @return The enum numeric value on the wire for bodyStyle.
+     */
+    @java.lang.Override public int getBodyStyleValue() {
+      return bodyStyle_;
+    }
+    /**
+     * <code>.BodyStyle body_style = 3;</code>
+     * @param value The enum numeric value on the wire for bodyStyle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBodyStyleValue(int value) {
+      
+      bodyStyle_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.BodyStyle body_style = 3;</code>
+     * @return The bodyStyle.
+     */
+    @java.lang.Override
+    public com.example.models.BodyStyle getBodyStyle() {
+      @SuppressWarnings("deprecation")
+      com.example.models.BodyStyle result = com.example.models.BodyStyle.valueOf(bodyStyle_);
+      return result == null ? com.example.models.BodyStyle.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.BodyStyle body_style = 3;</code>
+     * @param value The bodyStyle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBodyStyle(com.example.models.BodyStyle value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      bodyStyle_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.BodyStyle body_style = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBodyStyle() {
+      
+      bodyStyle_ = 0;
       onChanged();
       return this;
     }

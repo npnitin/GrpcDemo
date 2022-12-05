@@ -14,10 +14,17 @@ message Address {
 message Car {
   string company = 1;
   string model = 2;
+  BodyStyle body_style = 3;
 }
 
 message Dealer{
   map<int32,Car> model= 1;
+}
+
+enum BodyStyle{
+  SEDAN = 0; //index 0 is default value
+  SUV = 1;
+  HatchBack = 2;
 }
 
 message Person {

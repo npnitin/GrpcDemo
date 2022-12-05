@@ -20,7 +20,8 @@ public class MapDemo {
                 .putModel(2005,car1)
                 .build();
 
-        System.out.println(dealer);
+        System.out.println(dealer.getModelOrThrow(2005));
+        System.out.println(dealer.getModelOrDefault(2009,car));
 
     }
 
