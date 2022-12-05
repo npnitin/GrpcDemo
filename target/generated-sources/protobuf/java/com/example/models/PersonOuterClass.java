@@ -42,7 +42,7 @@ public final class PersonOuterClass {
       "(\005\022\016\n\006street\030\002 \001(\t\022\014\n\004city\030\003 \001(\t\"%\n\003Car\022" +
       "\017\n\007company\030\001 \001(\t\022\r\n\005model\030\002 \001(\t\"Q\n\006Perso" +
       "n\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\031\n\007address\030" +
-      "\003 \001(\0132\010.Address\022\021\n\003car\030\004 \001(\0132\004.CarB\026\n\022co" +
+      "\003 \001(\0132\010.Address\022\021\n\003car\030\004 \003(\0132\004.CarB\026\n\022co" +
       "m.example.modelsP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
