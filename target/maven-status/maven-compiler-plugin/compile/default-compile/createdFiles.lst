@@ -1,5 +1,14 @@
-com\example\models\Person$1.class
-com\example\models\Person.class
-com\example\models\PersonOrBuilder.class
+com\example\models\Car$Builder.class
+com\example\models\Car.class
 com\example\models\Person$Builder.class
+com\example\models\Person$1.class
+com\example\models\CarOrBuilder.class
+com\example\models\PersonOrBuilder.class
+com\example\models\Address$1.class
 com\example\models\PersonOuterClass.class
+com\example\models\Address.class
+com\example\models\Address$Builder.class
+com\example\models\AddressOrBuilder.class
+com\example\models\Car$1.class
+com\example\json\JPerson.class
+com\example\models\Person.class
