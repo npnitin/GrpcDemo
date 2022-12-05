@@ -57,9 +57,17 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 16: {
+          case 18: {
+            com.google.protobuf.Int32Value.Builder subBuilder = null;
+            if (age_ != null) {
+              subBuilder = age_.toBuilder();
+            }
+            age_ = input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(age_);
+              age_ = subBuilder.buildPartial();
+            }
 
-            age_ = input.readInt32();
             break;
           }
           case 26: {
@@ -160,14 +168,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int AGE_FIELD_NUMBER = 2;
-  private int age_;
+  private com.google.protobuf.Int32Value age_;
   /**
-   * <code>int32 age = 2;</code>
+   * <code>.google.protobuf.Int32Value age = 2;</code>
+   * @return Whether the age field is set.
+   */
+  @java.lang.Override
+  public boolean hasAge() {
+    return age_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Int32Value age = 2;</code>
    * @return The age.
    */
   @java.lang.Override
-  public int getAge() {
-    return age_;
+  public com.google.protobuf.Int32Value getAge() {
+    return age_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : age_;
+  }
+  /**
+   * <code>.google.protobuf.Int32Value age = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int32ValueOrBuilder getAgeOrBuilder() {
+    return getAge();
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 3;
@@ -253,8 +276,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (age_ != 0) {
-      output.writeInt32(2, age_);
+    if (age_ != null) {
+      output.writeMessage(2, getAge());
     }
     if (address_ != null) {
       output.writeMessage(3, getAddress());
@@ -274,9 +297,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (age_ != 0) {
+    if (age_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, age_);
+        .computeMessageSize(2, getAge());
     }
     if (address_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -303,8 +326,11 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (getAge()
-        != other.getAge()) return false;
+    if (hasAge() != other.hasAge()) return false;
+    if (hasAge()) {
+      if (!getAge()
+          .equals(other.getAge())) return false;
+    }
     if (hasAddress() != other.hasAddress()) return false;
     if (hasAddress()) {
       if (!getAddress()
@@ -325,8 +351,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + AGE_FIELD_NUMBER;
-    hash = (53 * hash) + getAge();
+    if (hasAge()) {
+      hash = (37 * hash) + AGE_FIELD_NUMBER;
+      hash = (53 * hash) + getAge().hashCode();
+    }
     if (hasAddress()) {
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
@@ -471,8 +499,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
-      age_ = 0;
-
+      if (ageBuilder_ == null) {
+        age_ = null;
+      } else {
+        age_ = null;
+        ageBuilder_ = null;
+      }
       if (addressBuilder_ == null) {
         address_ = null;
       } else {
@@ -513,7 +545,11 @@ private static final long serialVersionUID = 0L;
       com.example.models.Person result = new com.example.models.Person(this);
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
-      result.age_ = age_;
+      if (ageBuilder_ == null) {
+        result.age_ = age_;
+      } else {
+        result.age_ = ageBuilder_.build();
+      }
       if (addressBuilder_ == null) {
         result.address_ = address_;
       } else {
@@ -580,8 +616,8 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      if (other.getAge() != 0) {
-        setAge(other.getAge());
+      if (other.hasAge()) {
+        mergeAge(other.getAge());
       }
       if (other.hasAddress()) {
         mergeAddress(other.getAddress());
@@ -718,35 +754,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int age_ ;
+    private com.google.protobuf.Int32Value age_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> ageBuilder_;
     /**
-     * <code>int32 age = 2;</code>
+     * <code>.google.protobuf.Int32Value age = 2;</code>
+     * @return Whether the age field is set.
+     */
+    public boolean hasAge() {
+      return ageBuilder_ != null || age_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Int32Value age = 2;</code>
      * @return The age.
      */
-    @java.lang.Override
-    public int getAge() {
-      return age_;
+    public com.google.protobuf.Int32Value getAge() {
+      if (ageBuilder_ == null) {
+        return age_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : age_;
+      } else {
+        return ageBuilder_.getMessage();
+      }
     }
     /**
-     * <code>int32 age = 2;</code>
-     * @param value The age to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Int32Value age = 2;</code>
      */
-    public Builder setAge(int value) {
-      
-      age_ = value;
-      onChanged();
+    public Builder setAge(com.google.protobuf.Int32Value value) {
+      if (ageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        age_ = value;
+        onChanged();
+      } else {
+        ageBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>int32 age = 2;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Int32Value age = 2;</code>
+     */
+    public Builder setAge(
+        com.google.protobuf.Int32Value.Builder builderForValue) {
+      if (ageBuilder_ == null) {
+        age_ = builderForValue.build();
+        onChanged();
+      } else {
+        ageBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Int32Value age = 2;</code>
+     */
+    public Builder mergeAge(com.google.protobuf.Int32Value value) {
+      if (ageBuilder_ == null) {
+        if (age_ != null) {
+          age_ =
+            com.google.protobuf.Int32Value.newBuilder(age_).mergeFrom(value).buildPartial();
+        } else {
+          age_ = value;
+        }
+        onChanged();
+      } else {
+        ageBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Int32Value age = 2;</code>
      */
     public Builder clearAge() {
-      
-      age_ = 0;
-      onChanged();
+      if (ageBuilder_ == null) {
+        age_ = null;
+        onChanged();
+      } else {
+        age_ = null;
+        ageBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.Int32Value age = 2;</code>
+     */
+    public com.google.protobuf.Int32Value.Builder getAgeBuilder() {
+      
+      onChanged();
+      return getAgeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Int32Value age = 2;</code>
+     */
+    public com.google.protobuf.Int32ValueOrBuilder getAgeOrBuilder() {
+      if (ageBuilder_ != null) {
+        return ageBuilder_.getMessageOrBuilder();
+      } else {
+        return age_ == null ?
+            com.google.protobuf.Int32Value.getDefaultInstance() : age_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Int32Value age = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+        getAgeFieldBuilder() {
+      if (ageBuilder_ == null) {
+        ageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
+                getAge(),
+                getParentForChildren(),
+                isClean());
+        age_ = null;
+      }
+      return ageBuilder_;
     }
 
     private com.example.models.Address address_;

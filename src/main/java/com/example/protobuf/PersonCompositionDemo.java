@@ -4,6 +4,7 @@ import com.example.models.Address;
 import com.example.models.BodyStyle;
 import com.example.models.Car;
 import com.example.models.Person;
+import com.google.protobuf.Int32Value;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class PersonCompositionDemo {
 
         Person person = Person.newBuilder()
                 .setName("Nitin")
-                .setAge(30)
+                .setAge(Int32Value.of(30))
                 .setAddress(address)
                 //.addCar(car)
                 //.addCar(car1)

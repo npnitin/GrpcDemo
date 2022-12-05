@@ -20,10 +20,19 @@ public interface PersonOrBuilder extends
       getNameBytes();
 
   /**
-   * <code>int32 age = 2;</code>
+   * <code>.google.protobuf.Int32Value age = 2;</code>
+   * @return Whether the age field is set.
+   */
+  boolean hasAge();
+  /**
+   * <code>.google.protobuf.Int32Value age = 2;</code>
    * @return The age.
    */
-  int getAge();
+  com.google.protobuf.Int32Value getAge();
+  /**
+   * <code>.google.protobuf.Int32Value age = 2;</code>
+   */
+  com.google.protobuf.Int32ValueOrBuilder getAgeOrBuilder();
 
   /**
    * <code>.common.Address address = 3;</code>

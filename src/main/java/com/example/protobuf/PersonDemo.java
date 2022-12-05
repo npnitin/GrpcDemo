@@ -1,6 +1,7 @@
 package com.example.protobuf;
 
 import com.example.models.Person;
+import com.google.protobuf.Int32Value;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,7 +14,7 @@ public class PersonDemo {
 
         Person nitin = Person.newBuilder()
                 .setName("Nitin")
-                .setAge(30)
+                .setAge(Int32Value.of(25))
                 .build();
 
         System.out.println(nitin);
